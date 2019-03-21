@@ -4,38 +4,40 @@ import processing.core.PApplet;
 
 public class UI extends PApplet
 {
+    /**
+     *
+     */
+
     Button b;
     MovingCircle mc;
+    Radar rad;
 
     boolean[] keys = new boolean[1024];
+	
 
-    public void keyPressed()
-    {
-        keys[keyCode] = true;
-    }
-    
-    public void keyReleased()
-    {
+    public void keyPressed() {
         keys[keyCode] = true;
     }
 
-    public boolean checkKey(int c)
-    {
-        return keys[c] || keys [Character.toUpperCase(c)];
+    public void keyReleased() {
+        keys[keyCode] = true;
     }
-    
 
-    public void settings()
-    {
-        size(800, 800);
+    public boolean checkKey(int c) {
+        return keys[c] || keys[Character.toUpperCase(c)];
+    }
+
+    public void settings() {
+        size(1200, 800);
         // Use fullscreen instead of size to make your interface fullscreen
-        //fullScreen(); 
+        // fullScreen();
     }
 
-    public void setup()
-    {
+    public void setup() {
         b = new Button(this, 50, 50, 100, 50, "I am a button");
         mc = new MovingCircle(this, width / 2, height / 2, 50);
+       
+        rad = new Radar(this, width / 2, height / 2, 200);
     }
 
     public void draw()
@@ -45,6 +47,9 @@ public class UI extends PApplet
 
         mc.update();
         mc.render();
+
+        rad.render();
+        rad.update();
 
         if (checkKey(LEFT))
         {
