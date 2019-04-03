@@ -11,6 +11,13 @@ public class UI extends PApplet
     Button b;
     MovingCircle mc;
     Radar rad;
+    Stars s;
+    Cockpit c;
+
+    Stars[] stars = new Stars[400];
+    float speed;  
+    float sx;
+    float sy;  
 
     boolean[] keys = new boolean[1024];
 	
@@ -20,7 +27,7 @@ public class UI extends PApplet
     }
 
     public void keyReleased() {
-        keys[keyCode] = true;
+        keys[keyCode] = false;
     }
 
     public boolean checkKey(int c) {
@@ -28,28 +35,48 @@ public class UI extends PApplet
     }
 
     public void settings() {
-        size(1200, 800);
+        size(800, 800);
+        
         // Use fullscreen instead of size to make your interface fullscreen
         // fullScreen();
     }
-
+    
     public void setup() {
         b = new Button(this, 50, 50, 100, 50, "I am a button");
         mc = new MovingCircle(this, width / 2, height / 2, 50);
-       
         rad = new Radar(this, width / 2, height / 2, 200);
+        c = new Cockpit(this);
+        for (int i=0;i<stars.length;i++)
+        {
+            stars[i] = new Stars(this, random(0, width), random(0, height),random(width/2));
+        }
+       // c = new Cockpit();
+       
+
     }
 
     public void draw()
     {
+        //map(mouseX, 0, width, 0, 50);
+        
         background(0);
-        b.render();
-
-        mc.update();
-        mc.render();
+    
+        //b.render();
+    
+        pushMatrix();
+        translate(width/2, height/2);
+        for(int i=0;i<stars.length;i++){
+            stars[i].render();
+            stars[i].update();
+        }
+        popMatrix();
+   
+       
+        // c.update();
+        c.render();
 
         rad.render();
-        rad.update();
+       rad.update();
 
         if (checkKey(LEFT))
         {
