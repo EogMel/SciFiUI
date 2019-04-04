@@ -6,7 +6,8 @@ public class Stars
     private float y;
     private float z;
     private float pz;
-    // private float sx;
+    private float sx;
+    private float sy;
     UI ui;
 
     
@@ -66,6 +67,26 @@ public class Stars
         if (ui.checkKey('f') )
         {
             z -= 4;
+        }
+
+
+
+        float px = ui.map(x / pz, 0, 1, 0, ui.width/2);
+        float py = ui.map(y / pz, 0, 1, 0, ui.height/2);
+        pz = z ;
+        
+        if (ui.checkKey('h'))
+        {
+            
+            ui.stroke(255);
+            ui.strokeWeight(1/2);
+            
+            ui.line(px+10, py+10, sx, sy);
+        
+        
+            z-= 20;
+
+      
         }
 
         if (z < 1) {

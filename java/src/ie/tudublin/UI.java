@@ -14,7 +14,7 @@ public class UI extends PApplet
     Stars s;
     Cockpit c;
 
-    Stars[] stars = new Stars[400];
+    Stars[] stars = new Stars[300];
     float speed;  
     float sx;
     float sy;  
