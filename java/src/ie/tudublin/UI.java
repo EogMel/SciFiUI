@@ -44,7 +44,7 @@ public class UI extends PApplet
     public void setup() {
         b = new Button(this, 50, 50, 100, 50, "I am a button");
         mc = new MovingCircle(this, width / 2, height / 2, 50);
-        rad = new Radar(this, width / 2, height / 2, 200);
+        rad = new Radar(this, width / 2, height / 2, 150);
         c = new Cockpit(this);
         for (int i=0;i<stars.length;i++)
         {
@@ -71,8 +71,6 @@ public class UI extends PApplet
         }
         popMatrix();
    
-       
-        // c.update();
         c.render();
 
         rad.render();

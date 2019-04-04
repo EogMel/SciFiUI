@@ -6,7 +6,7 @@ public class Stars
     private float y;
     private float z;
     private float pz;
-    private float sx;
+    // private float sx;
     UI ui;
 
     
@@ -49,19 +49,23 @@ public class Stars
         
         if (ui.checkKey('s') )
         {
-            z -= 2;
+            y -= 2;
         }
         if (ui.checkKey('w') )
         {
-            z -= 5;
+            y += 2;
         }
-        if (ui.checkKey('e') )
+        if (ui.checkKey('a') )
         {
-            z += 2;
+            x += 4;
         }
         if (ui.checkKey('d') )
         {
-            z += 3;
+            x -= 4;
+        }
+        if (ui.checkKey('f') )
+        {
+            z -= 4;
         }
 
         if (z < 1) {

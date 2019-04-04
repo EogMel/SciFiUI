@@ -1,7 +1,6 @@
 package ie.tudublin;
 
-import static processing.core.PConstants.HALF_PI;
-import static processing.core.PConstants.PI;
+
 
 public class Cockpit {
 
@@ -14,10 +13,44 @@ public class Cockpit {
     public void render() {
         float third = ui.height/3;
         float quart = ui.height/4;
+        float midDash = ui.height-third;
+        
+        ui.stroke(100);
+        ui.strokeWeight(5);
 
-        ui.stroke(255);
-        ui.line(0, ui.height - third,quart ,ui.height-quart);
-  
+        ui.fill(125, 125, 137);
+        
+        
+        // ui.line(5, ui.height - third,quart ,ui.height-quart);
+        // ui.line(quart, ui.height-quart, ui.width-quart, ui.height-quart);
+        // ui.line(ui.width-quart, ui.height-quart, ui.width-5, ui.height-third);
+        // ui.line(ui.width-5, ui.height-third, ui.width-5, ui.height-5);
+        // ui.line(ui.width-5, ui.height-5, 5, ui.height-5);
+        // ui.line(5, ui.height-5, 5, ui.height-third);
+
+        ui.beginShape(); // necessary for filling in the dashboard
+        ui.vertex(5, ui.height-third);
+        ui.vertex(quart,ui.height-quart);
+        ui.vertex(ui.width-quart,ui.height-quart);
+        ui.vertex(ui.width-5, ui.height-third);
+        ui.vertex(ui.width-5, ui.height-5);
+        ui.vertex(5, ui.height-5);
+        ui.vertex(5, ui.height-third);
+        ui.endShape();
+
+        ui.beginShape();
+        ui.vertex(0, quart);
+        ui.vertex(quart, third/2);
+        ui.vertex(ui.width-quart, third/2);
+        ui.vertex(ui.width,quart);
+        ui.vertex(ui.width,0);
+        ui.vertex(0, 0);
+        ui.vertex(0, quart);
+        ui.endShape();
+
+
+
+        ui.strokeWeight(1);
     }
 
 

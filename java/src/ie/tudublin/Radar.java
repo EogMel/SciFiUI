@@ -6,7 +6,7 @@ package ie.tudublin;
 public class Radar
 {
     private float x;
-    private float ex = 100;
+   // private float ex = 100;
     private float y;
     float r = 0;
     private float diameter;
@@ -25,14 +25,27 @@ public class Radar
 
     public void render()
     {
+        float third = ui.height/3;
+        float quart = ui.height/4;
+        
+        float midDash = ui.height-(quart/2);
+
+
+
         ui.pushMatrix();
-        ui.translate(ui.width/2,ui.height/2);
+        ui.translate(ui.width/2,midDash);
         ui.rotate(rotation);
        // ui.translate(x,y);
-        ui.stroke(255); 
+        ui.stroke(0); 
         ui.noFill();
-        ui.rect(0,0,radius,radius);
+        //ui.rect(0,0,radius,radius);
+        ui.fill(21, 112, 37);
+
         ui.ellipse(0, 0, diameter, diameter);
+        ui.noFill();
+        ui.ellipse(0, 0, (diameter/4)*3, (diameter/4)*3);
+        ui.ellipse(0, 0, diameter/2, diameter/2);
+        ui.ellipse(0, 0, diameter/4, diameter/4);
         ui.line(0, 0, radius, 0);
 
 
@@ -42,7 +55,8 @@ public class Radar
 
     public void update()
     {
-        if (ui.checkKey('w') )
+        rotation += .01f;
+        if (ui.checkKey('f') )
         {
             rotation += .05f;
         }
