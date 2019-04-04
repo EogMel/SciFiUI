@@ -60,6 +60,10 @@ public class Radar
         {
             rotation += .05f;
         }
+        if (ui.checkKey('h') )
+        {
+            rotation += .25f;
+        }
         
 
         

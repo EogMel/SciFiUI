@@ -48,6 +48,13 @@ public class Cockpit {
         ui.vertex(0, quart);
         ui.endShape();
 
+        
+        ui.rect(quart+20,ui.height- quart-50, 70, 50);
+        ui.rect(quart + 37, ui.height-quart-75, 35, 25);
+
+        ui.rect(quart+40+ third,ui.height- quart-50, 70, 50);
+        ui.rect(quart + 57 + third, ui.height-quart-75, 35, 25);
+
 
 
         ui.strokeWeight(1);

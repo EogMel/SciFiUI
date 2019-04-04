@@ -13,6 +13,7 @@ public class UI extends PApplet
     Radar rad;
     Stars s;
     Cockpit c;
+    Reticle ret;
 
     Stars[] stars = new Stars[300];
     float speed;  
@@ -46,6 +47,7 @@ public class UI extends PApplet
         mc = new MovingCircle(this, width / 2, height / 2, 50);
         rad = new Radar(this, width / 2, height / 2, 150);
         c = new Cockpit(this);
+        ret = new Reticle(this);
         for (int i=0;i<stars.length;i++)
         {
             stars[i] = new Stars(this, random(0, width), random(0, height),random(width/2));
@@ -71,6 +73,8 @@ public class UI extends PApplet
         }
         popMatrix();
    
+        ret.render();
+        ret.update();
         c.render();
 
         rad.render();
