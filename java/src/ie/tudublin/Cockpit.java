@@ -38,6 +38,9 @@ public class Cockpit {
         ui.vertex(5, ui.height-third);
         ui.endShape();
 
+
+
+        ui.stroke(100);
         ui.beginShape();
         ui.vertex(0, quart);
         ui.vertex(quart, third/2);
@@ -55,6 +58,27 @@ public class Cockpit {
 
         ui.rect(quart+40+ third,ui.height- quart-50, 70, 50);
         ui.rect(quart + 57 + third, ui.height-quart-75, 35, 25);
+
+
+
+        
+
+        ui.stroke(80);
+        ui.line(quart,ui.height, quart , ui.height - quart);
+        ui.line(ui.width-quart, ui.height, ui.width-quart, ui.height-quart);
+        ui.line(quart,0, quart , third/2);
+        ui.line(ui.width-quart,0, ui.width- quart , third/2);
+
+
+
+
+
+
+
+
+        //BUTTON LIGHTS
+        
+
 
 
 

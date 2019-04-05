@@ -28,15 +28,45 @@ public class Reticle{
         ui.line(ui.mouseX+50,ui.mouseY, ui.mouseX-50,ui.mouseY);
         ui.line(ui.mouseX,ui.mouseY+50, ui.mouseX,ui.mouseY-50);
         ui.ellipse(ui.mouseX, ui.mouseY, 100, 100);
+        ui.ellipse(ui.mouseX, ui.mouseY, 150, 150);
         ui.ellipse(ui.mouseX, ui.mouseY, 200, 200);
-        ui.ellipse(ui.mouseX, ui.mouseY, 300, 300);
         }
 
 
      }
      public void update()
      {
-        // ui.ellipse(ui.mouseX, ui.mouseY, 100, 100);
+        float third = ui.height/3;
+        float quart = ui.height/4;
+        
+        
+
+
+        if (ui.checkKey(' ') )
+        {   
+            ui.stroke(183, 62, 1);
+            ui.strokeWeight(6);
+            ui.line(quart + 55, ui.height-quart-50, ui.mouseX,ui.mouseY);
+            ui.stroke(178, 37, 1);
+            ui.strokeWeight(4);
+            ui.line(quart + 55, ui.height-quart-50, ui.mouseX,ui.mouseY);
+            ui.stroke(255);
+            ui.strokeWeight(1);
+            ui.line(quart + 55, ui.height-quart-50, ui.mouseX,ui.mouseY);
+
+
+
+            ui.stroke(183, 62, 1);
+            ui.strokeWeight(6);
+            ui.line(quart + 75 + third, ui.height-quart-50, ui.mouseX,ui.mouseY);
+            ui.stroke(178, 37, 1);
+            ui.strokeWeight(4);
+            ui.line(quart + 75 + third, ui.height-quart-50, ui.mouseX,ui.mouseY);
+            ui.stroke(255);
+            ui.strokeWeight(1);
+            ui.line(quart + 75 + third, ui.height-quart-50, ui.mouseX,ui.mouseY);
+        }
+
      }
 
 
