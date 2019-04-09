@@ -51,6 +51,25 @@ public class Radar
 
         ui.popMatrix();
 
+        ui.pushMatrix();
+        ui.translate(ui.width-quart+radius+20, midDash);
+        ui.rotate(rotation);
+        ui.stroke(75);
+        ui.strokeWeight(3);
+        ui.fill(53, 94, 160);
+        ui.ellipse(0, 0, diameter, diameter);
+
+        ui.strokeWeight(10);
+        ui.stroke(0,0,255);
+        ui.arc(0, 0, diameter-18, diameter-18, 0, UI.HALF_PI *4/3);
+        
+        ui.arc(0, 0, diameter-35, diameter-35, UI.PI, 3/2*UI.PI);
+
+
+        ui.popMatrix();
+        ui.stroke(0); 
+        ui.strokeWeight(1);
+        ui.rotate(rotation);
     }
 
     public void update()
@@ -59,6 +78,10 @@ public class Radar
         if (ui.checkKey('f') )
         {
             rotation += .05f;
+        }
+        if (ui.checkKey('r') )
+        {
+            rotation += .10f;
         }
         if (ui.checkKey('h') )
         {

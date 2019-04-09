@@ -34,6 +34,7 @@ public class Stars
 
 
         float r = ui.map(z, 0, ui.width/2, 16, 0);
+        ui.sphere(r);
          ui.ellipse(sx, sy, r, r);
 
 
@@ -67,6 +68,10 @@ public class Stars
         if (ui.checkKey('f') )
         {
             z -= 4;
+        }
+        if (ui.checkKey('r') )
+        {
+            z -= 7;
         }
 
 

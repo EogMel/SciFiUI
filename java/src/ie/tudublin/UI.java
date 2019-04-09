@@ -1,5 +1,6 @@
 package ie.tudublin;
 
+
 import processing.core.PApplet;
 
 public class UI extends PApplet
@@ -8,12 +9,15 @@ public class UI extends PApplet
      *
      */
 
+
+
     Button b;
     MovingCircle mc;
     Radar rad;
     Stars s;
     Cockpit c;
     Reticle ret;
+ 
 
     Stars[] stars = new Stars[300];
     float speed;  
@@ -36,8 +40,8 @@ public class UI extends PApplet
     }
 
     public void settings() {
-        size(800, 800);
-        
+        size(800 , 800);
+   
         // Use fullscreen instead of size to make your interface fullscreen
         // fullScreen();
     }
@@ -76,9 +80,13 @@ public class UI extends PApplet
         ret.render();
         ret.update();
         c.render();
+        stroke(255);
 
         rad.render();
        rad.update();
+
+
+        
 
         if (checkKey(LEFT))
         {
