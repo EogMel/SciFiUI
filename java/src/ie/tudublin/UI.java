@@ -19,7 +19,7 @@ public class UI extends PApplet
     Reticle ret;
  
 
-    Stars[] stars = new Stars[300];
+    Stars[] stars = new Stars[800];
     float speed;  
     float sx;
     float sy;  
@@ -72,8 +72,9 @@ public class UI extends PApplet
         pushMatrix();
         translate(width/2, height/2);
         for(int i=0;i<stars.length;i++){
-            stars[i].render();
             stars[i].update();
+            stars[i].render();
+            
         }
         popMatrix();
    
