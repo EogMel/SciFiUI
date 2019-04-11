@@ -65,6 +65,24 @@ public class Reticle{
             ui.stroke(255);
             ui.strokeWeight(1);
             ui.line(quart + 75 + third, ui.height-quart-50, ui.mouseX,ui.mouseY);
+
+            if(ui.player2.position() == ui.player2.length())
+            {
+                ui.player2.rewind();
+                ui.player2.play();
+            }
+            else{
+                ui.player2.play();
+            }
+
+            // if(ui.player3.position() == ui.player3.length())
+            // {
+            //     ui.player3.rewind();
+            //     ui.player3.play();
+            // }
+            // else{
+            //     ui.player3.play();
+            // }               
         }
 
      }

@@ -2,10 +2,21 @@ package ie.tudublin;
 
 
 import processing.core.PApplet;
+import ddf.minim.*;
+
+
+
 
 public class UI extends PApplet
 {
+    Minim minim;
+    
+    AudioPlayer player;
+    AudioPlayer player1;
+    AudioPlayer player2;
+    AudioPlayer player3;
     /**
+     * 
      *
      */
 
@@ -19,7 +30,7 @@ public class UI extends PApplet
     Reticle ret;
  
 
-    Stars[] stars = new Stars[800];
+    Stars[] stars = new Stars[500];
     float speed;  
     float sx;
     float sy;  
@@ -47,6 +58,14 @@ public class UI extends PApplet
     }
     
     public void setup() {
+        minim = new Minim(this);
+        player = minim.loadFile("Rocket Thrusters-SoundBible.com-1432176431.mp3");
+        player1 = minim.loadFile("creepy-background-daniel_simon.mp3");
+        player2 = minim.loadFile("164102__bmaczero__laser.wav");
+        player3 = minim.loadFile("336740__steshystesh__spaceship-whoosh-1.wav");
+        
+
+
         b = new Button(this, 50, 50, 100, 50, "I am a button");
         mc = new MovingCircle(this, width / 2, height / 2, 50);
         rad = new Radar(this, width / 2, height / 2, 150);
@@ -64,7 +83,24 @@ public class UI extends PApplet
     public void draw()
     {
         //map(mouseX, 0, width, 0, 50);
-        
+      //  player.play();
+         
+        if(player.position() == player.length())
+        {
+            player.rewind();
+            player.play();
+        }
+        else{
+            player.play();
+        }
+        if(player1.position() == player1.length())
+        {
+            player1.rewind();
+            player1.play();
+        }
+        else{
+            player1.play();
+        }
         background(0);
     
         //b.render();

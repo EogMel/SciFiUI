@@ -17,24 +17,24 @@ public class Stars
         this.x = x;
         this.y = y;
         this.z = z;
-       // this.pz=z;
+       
         
 
 
     }
-    //Stars[] s = new Stars[400];
+    
 
     public void render()
     {
         ui.fill(255);
         ui.noStroke();
 
-        float sx = ui.map(x / z, 0, 1, 0, ui.width/2);
-        float sy = ui.map(y / z, 0, 1, 0, ui.height/2);
+        sx = ui.map(x / z, 0, 1, 0, ui.width/2);
+        sy = ui.map(y / z, 0, 1, 0, ui.height/2);
 
 
         float r = ui.map(z, 0, ui.width/2, 16, 0);
-        
+        ui.fill(249, 234, 255);
          ui.ellipse(sx, sy, r, r);
 
 
@@ -45,14 +45,18 @@ public class Stars
          if (ui.checkKey('h'))
          {
              
-             ui.stroke(255);
-             ui.strokeWeight(5/6);
+
+
+             ui.stroke(167, 165, 255);
+             ui.strokeWeight(.55f);
              
              ui.line(px, py, sx, sy);
             
          
          
              z-= 20;
+
+
  
        
          }
@@ -89,13 +93,11 @@ public class Stars
         }
         if (ui.checkKey('r') )
         {
-            z -= 7;
+            z -= 5;
         }
 
 
-        // float px = ui.map(x / z, 0, 1, 0, ui.width/2);
-        // float py = ui.map(y / z, 0, 1, 0, ui.height/2);
-        //pz = z ;
+  
         if (z < 1) {
             z = ui.width/2;
             x = ui.random(-ui.width/2, ui.width/2);
@@ -103,23 +105,6 @@ public class Stars
             pz = z;
           }
 
-        
-        // if (ui.checkKey('h'))
-        // {
-            
-        //     ui.stroke(255);
-        //     ui.strokeWeight(1/2);
-            
-        //     ui.line(px+10, py+10, sx, sy);
-           
-        
-        
-        //     z-= 20;
-
-      
-        // }
-
-        
 
 
     }
