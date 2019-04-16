@@ -44,7 +44,14 @@ public class Stars
 
          if (ui.checkKey('h'))
          {
-             
+            if(ui.player4.position() == ui.player4.length())
+            {
+                ui.player4.rewind();
+                ui.player4.play();
+            }
+            else{
+                ui.player4.play();
+            }
 
 
              ui.stroke(167, 165, 255);

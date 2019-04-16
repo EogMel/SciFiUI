@@ -29,6 +29,7 @@ public class UI extends PApplet
     Stars s;
     Cockpit c;
     Reticle ret;
+    Sound snd;
  
 
     Stars[] stars = new Stars[500];
@@ -84,8 +85,7 @@ public class UI extends PApplet
 
     public void draw()
     {
-        //map(mouseX, 0, width, 0, 50);
-      //  player.play();
+    
          
         if(player.position() == player.length())
         {
