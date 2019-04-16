@@ -15,6 +15,7 @@ public class UI extends PApplet
     AudioPlayer player1;
     AudioPlayer player2;
     AudioPlayer player3;
+    AudioPlayer player4;
     /**
      * 
      *
@@ -63,6 +64,7 @@ public class UI extends PApplet
         player1 = minim.loadFile("creepy-background-daniel_simon.mp3");
         player2 = minim.loadFile("164102__bmaczero__laser.wav");
         player3 = minim.loadFile("336740__steshystesh__spaceship-whoosh-1.wav");
+        player4 = minim.loadFile("hyper.wav");
         
 
 
