@@ -2,15 +2,15 @@ package ie.tudublin;
 
 
 
-public class Cockpit {
-
-    private UI ui;
+public class Cockpit extends UiObject {
 
     
+    
+    public Cockpit(UI ui, float x, float y, float z) {
+        super(ui, x, y, z);
+        third = ui.height/3;
+        quart = ui.height/4;
 
-
-    public Cockpit(UI ui) {
-        this.ui = ui;
     }
     public void calcWave() {
         // Increment theta (try different values for 'angular velocity' here
@@ -25,8 +25,7 @@ public class Cockpit {
       }
 
     public void render() {
-        float third = ui.height/3;
-        float quart = ui.height/4;
+        
         
         
         ui.strokeWeight(5);
@@ -175,7 +174,10 @@ public class Cockpit {
         ui.strokeWeight(1);
     }
 
+public void update()
+{
 
+}
 
 }
 

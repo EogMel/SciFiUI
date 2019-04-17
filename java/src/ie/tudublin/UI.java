@@ -84,7 +84,7 @@ public class UI extends PApplet
         b = new Button(this, 50, 50, 100, 50, "I am a button");
         mc = new MovingCircle(this, width / 2, height / 2, 50);
         rad = new Radar(this, width / 2, height / 2, 150);
-        c = new Cockpit(this);
+        c = new Cockpit(this, random(0, width), random(0, height),random(width/2));
         ret = new Reticle(this);
         for (int i=0;i<stars.length;i++)
         {
