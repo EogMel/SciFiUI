@@ -27,7 +27,7 @@ public class Cockpit {
     public void render() {
         float third = ui.height/3;
         float quart = ui.height/4;
-        float midDash = ui.height-third;
+        
         
         ui.strokeWeight(5);
         ui.fill(73, 73, 73);
@@ -68,17 +68,7 @@ public class Cockpit {
         ui.vertex(0, quart);
         ui.endShape();
 
-        // ui.fill(73, 73, 73);
-        // ui.stroke(33);
-        // ui.rect(quart+20,ui.height- quart-50, 70, 50);
-        // ui.rect(quart + 37, ui.height-quart-75, 35, 25);
 
-        // ui.rect(quart+40+ third,ui.height- quart-50, 70, 50);
-        // ui.rect(quart + 57 + third, ui.height-quart-75, 35, 25);
-
-
-
-        
 
         ui.stroke(80);
         ui.line(quart,ui.height, quart , ui.height - quart);

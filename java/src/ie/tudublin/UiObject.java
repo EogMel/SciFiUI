@@ -19,16 +19,23 @@ public abstract class UiObject
         this.x = x;
         this.y = y;
         this.z = z;
-        this.x = third;
-        this.x = quart;
-        this.x = diameter;
-        this.x = radius;
+        this.third = third;
+        this.quart = quart;
+        this.diameter = diameter;
+        this.radius = radius;
         this.rotation = rotation;
       
 
     }
 
-    public abstract void update();
+    public UiObject(UI ui, float x, float y, float z) {
+        this.ui = ui;
+        this.x = x;
+        this.y = y;
+        this.z = z;
+	}
+
+	public abstract void update();
 
     public abstract void render();
 

@@ -75,14 +75,7 @@ public class Reticle{
                 ui.player2.play();
             }
 
-            // if(ui.player3.position() == ui.player3.length())
-            // {
-            //     ui.player3.rewind();
-            //     ui.player3.play();
-            // }
-            // else{
-            //     ui.player3.play();
-            // }               
+                  
         }
 
      }

@@ -1,26 +1,17 @@
 package ie.tudublin;
 
-public class Stars
+public class Stars extends UiObject
 {
-    private float x;
-    private float y;
-    private float z;
     private float pz;
     private float sx;
     private float sy;
-    UI ui;
+    
 
     
 
-    public Stars(UI ui,float x,float y ,float z){
-        this.ui = ui;
-        this.x = x;
-        this.y = y;
-        this.z = z;
-       
+    public Stars(UI ui, float x, float y, float z){
+        super(ui, x, y, z);
         
-
-
     }
     
 
