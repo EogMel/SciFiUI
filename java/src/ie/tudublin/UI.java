@@ -29,13 +29,22 @@ public class UI extends PApplet
     Stars s;
     Cockpit c;
     Reticle ret;
-    Sound snd;
- 
+
 
     Stars[] stars = new Stars[500];
     float speed;  
     float sx;
     float sy;  
+    
+    int xspacing = 2;   // How far apart should each horizontal location be spaced
+    int w;              // Width of entire wave
+
+    float theta = 0;  // Start angle at 0
+    float amplitude = 30;  // Height of wave
+    float period = 500;  // How many pixels before the wave repeats
+    float dx;  // Value for incrementing X, a function of period and xspacing
+    float[] yvalues; // Using an array to store height values for the wave
+
 
     boolean[] keys = new boolean[1024];
 	
@@ -67,7 +76,9 @@ public class UI extends PApplet
         player3 = minim.loadFile("336740__steshystesh__spaceship-whoosh-1.wav");
         player4 = minim.loadFile("hyper.wav");
         
-        
+        w = width/4;
+        dx = (UI.TWO_PI / period) * xspacing*2;
+        yvalues = new float[w/xspacing];
 
 
         b = new Button(this, 50, 50, 100, 50, "I am a button");
@@ -119,6 +130,7 @@ public class UI extends PApplet
    
         ret.render();
         ret.update();
+        c.calcWave();
         c.render();
         stroke(255);
 

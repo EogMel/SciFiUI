@@ -6,9 +6,23 @@ public class Cockpit {
 
     private UI ui;
 
+    
+
+
     public Cockpit(UI ui) {
         this.ui = ui;
     }
+    public void calcWave() {
+        // Increment theta (try different values for 'angular velocity' here
+        ui.theta += 0.02;
+      
+        // For every x value, calculate a y value with sine function
+        float x = ui.theta;
+        for (int i = 0; i < ui.yvalues.length; i++) {
+          ui.yvalues[i] = ui.sin(x)*ui.amplitude;
+          x+=ui.dx;
+        }
+      }
 
     public void render() {
         float third = ui.height/3;
@@ -32,13 +46,13 @@ public class Cockpit {
         ui.fill(125, 125, 137);
         
         ui.beginShape(); // necessary for filling in the dashboard
-        ui.vertex(5, ui.height-third);
+        ui.vertex(0, ui.height-third);
         ui.vertex(quart,ui.height-quart);
         ui.vertex(ui.width-quart,ui.height-quart);
-        ui.vertex(ui.width-5, ui.height-third);
-        ui.vertex(ui.width-5, ui.height-5);
-        ui.vertex(5, ui.height-5);
-        ui.vertex(5, ui.height-third);
+        ui.vertex(ui.width, ui.height-third);
+        ui.vertex(ui.width, ui.height);
+        ui.vertex(0, ui.height);
+        ui.vertex(0, ui.height-third);
         ui.endShape();
 
 
@@ -144,15 +158,33 @@ public class Cockpit {
             ui.fill(200,200,5);
             ui.rect(quart + 20, ui.height-60, 80, bHeight);
         }
-        
 
 
+
+                
+        ui.rect(quart + 70, 20, third, quart-100);
+        if (ui.checkKey('h') )
+        {
+            ui.fill(ui.random(100,255),100,25);
+            ui.rect(quart + 70, 20, third, quart-100);
+        }
+        ui.noStroke();
+        ui.fill(255);
+        // A simple way to draw the wave with an ellipse at each location
+        for (int x = 0; x < ui.yvalues.length; x++) {
+            ui.colorMode(UI.HSB);
+            ui.fill(ui.random(100,255),ui.random(100,255),ui.random(100,255));
+          ui.ellipse(x*ui.xspacing+(ui.width/13)*5, ui.height/12+ui.yvalues[x], 40, 16);
+          ui.colorMode(UI.RGB);
+          
+        }
 
 
 
 
         ui.strokeWeight(1);
     }
+
 
 
 }

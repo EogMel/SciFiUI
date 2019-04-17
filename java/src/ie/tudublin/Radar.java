@@ -39,7 +39,7 @@ public class Radar
         ui.stroke(0); 
         ui.noFill();
         //ui.rect(0,0,radius,radius);
-        ui.fill(21, 112, 37);
+        ui.fill(21, 180, 37);
 
         ui.ellipse(0, 0, diameter, diameter);
         ui.noFill();
@@ -51,6 +51,28 @@ public class Radar
 
         ui.popMatrix();
 
+        if (ui.checkKey('h') )
+        {
+            ui.pushMatrix();
+            ui.translate(ui.width/2,midDash);
+            ui.rotate(rotation);
+           // ui.translate(x,y);
+            ui.stroke(0); 
+            ui.noFill();
+            //ui.rect(0,0,radius,radius);
+            ui.fill(21, ui.random(90,190), 37);
+    
+            ui.ellipse(0, 0, diameter, diameter);
+            ui.noFill();
+            ui.ellipse(0, 0, (diameter/4)*3, (diameter/4)*3);
+            ui.ellipse(0, 0, diameter/2, diameter/2);
+            ui.ellipse(0, 0, diameter/4, diameter/4);
+            ui.line(0, 0, radius, 0);
+    
+    
+            ui.popMatrix();
+        }
+
         ui.pushMatrix();
         ui.translate(ui.width-quart+radius+20, midDash);
         ui.rotate(rotation);
@@ -59,13 +81,15 @@ public class Radar
         ui.fill(53, 94, 160);
         ui.ellipse(0, 0, diameter, diameter);
 
-        ui.strokeWeight(10);
+        ui.strokeWeight(8);
         ui.stroke(0,0,255);
         ui.arc(0, 0, diameter-18, diameter-18, 0, UI.HALF_PI *4/3);
         ui.stroke(250,0,250);
         ui.arc(0, 0, diameter-40, diameter-40, UI.HALF_PI, 3/2*UI.PI);
         ui.stroke(150,50,255);
         ui.arc(0, 0, diameter-60, diameter-60, 0-UI.PI, UI.HALF_PI-UI.QUARTER_PI);
+        ui.stroke(255,50,50);
+        ui.arc(0, 0, diameter-85, diameter-85, 0-UI.HALF_PI, UI.PI);
 
 
         ui.popMatrix();
@@ -78,8 +102,18 @@ public class Radar
         {
             ui.pushMatrix();
             ui.translate(ui.width-quart+radius+20, midDash);
+            ui.rotate(rotation);
             ui.fill(53, 94, ui.random(100,255));
             ui.ellipse(0, 0, diameter, diameter);
+            ui.stroke(0,0,255);
+            ui.strokeWeight(ui.random(5,9));
+            ui.arc(0, 0, diameter-18, diameter-18, 0, UI.HALF_PI *4/3);
+            ui.stroke(250,0,250);
+            ui.arc(0, 0, diameter-40, diameter-40, UI.HALF_PI, 3/2*UI.PI);
+            ui.stroke(150,50,255);
+            ui.arc(0, 0, diameter-60, diameter-60, 0-UI.PI, UI.HALF_PI-UI.QUARTER_PI);
+            ui.stroke(255,50,50);
+            ui.arc(0, 0, diameter-85, diameter-85, 0-UI.HALF_PI, UI.PI);
             ui.popMatrix();
         }
     }
