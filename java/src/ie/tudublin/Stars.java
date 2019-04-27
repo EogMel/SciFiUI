@@ -24,7 +24,7 @@ public class Stars extends UiObject
         sy = ui.map(y / z, 0, 1, 0, ui.height/2);
 
 
-        float r = ui.map(z, 0, ui.width/2, 16, 0);
+        float r = ui.map(z, 0, ui.width/2, 20, 0);
         ui.fill(249, 234, 255);
          ui.ellipse(sx, sy, r, r);
 
@@ -71,19 +71,19 @@ public class Stars extends UiObject
         
         if (ui.checkKey('s') )
         {
-            y -= 2;
+            y -= 1.5f;
         }
         if (ui.checkKey('w') )
         {
-            y += 2;
+            y += 1.5f;
         }
         if (ui.checkKey('a') )
         {
-            x += 4;
+            x += 1.5f;
         }
         if (ui.checkKey('d') )
         {
-            x -= 4;
+            x -= 1.5f;
         }
         if (ui.checkKey('f') )
         {

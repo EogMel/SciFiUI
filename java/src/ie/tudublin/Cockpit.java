@@ -159,7 +159,7 @@ public class Cockpit extends UiObject {
         }
         ui.noStroke();
         ui.fill(255);
-        // A simple way to draw the wave with an ellipse at each location
+        
         for (int x = 0; x < ui.yvalues.length; x++) {
             ui.colorMode(UI.HSB);
             ui.fill(ui.random(100,255),ui.random(100,255),ui.random(100,255));

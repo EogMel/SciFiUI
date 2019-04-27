@@ -16,12 +16,6 @@ public class UI extends PApplet
     AudioPlayer player2;
     AudioPlayer player3;
     AudioPlayer player4;
-    /**
-     * 
-     *
-     */
-
-
 
     Button b;
     MovingCircle mc;
@@ -31,19 +25,19 @@ public class UI extends PApplet
     Reticle ret;
 
 
-    Stars[] stars = new Stars[500];
+    Stars[] stars = new Stars[600];
     float speed;  
     float sx;
     float sy;  
     
-    int xspacing = 2;   // How far apart should each horizontal location be spaced
-    int w;              // Width of entire wave
+    int xspacing = 2;  
+    int w;              
 
-    float theta = 0;  // Start angle at 0
-    float amplitude = 30;  // Height of wave
-    float period = 500;  // How many pixels before the wave repeats
-    float dx;  // Value for incrementing X, a function of period and xspacing
-    float[] yvalues; // Using an array to store height values for the wave
+    float theta = 0;
+    float amplitude = 30; 
+    float period = 500; 
+    float dx; 
+    float[] yvalues; 
 
 
     boolean[] keys = new boolean[1024];
@@ -65,7 +59,7 @@ public class UI extends PApplet
         size(800 , 800);
    
         // Use fullscreen instead of size to make your interface fullscreen
-        // fullScreen();
+        //fullScreen();
     }
     
     public void setup() {
@@ -83,14 +77,14 @@ public class UI extends PApplet
 
         b = new Button(this, 50, 50, 100, 50, "I am a button");
         mc = new MovingCircle(this, width / 2, height / 2, 50);
-        rad = new Radar(this, width / 2, height / 2, 150);
+        rad = new Radar(this,random(0, width), random(0, height),random(width/2),height/3,height/4,150,0);
         c = new Cockpit(this, random(0, width), random(0, height),random(width/2));
-        ret = new Reticle(this);
+        ret = new Reticle(this,random(0, width), random(0, height),random(width/2),height/3,height/4,150,0);
         for (int i=0;i<stars.length;i++)
         {
             stars[i] = new Stars(this, random(0, width), random(0, height),random(width/2));
         }
-       // c = new Cockpit();
+      
        
 
     }

@@ -1,20 +1,18 @@
 package ie.tudublin;
 
-public class Reticle{
-    private float x;
-     private float y;
-     float r = 0;
-     private float diameter;
-     private float radius;
-     private float rotation;
-     UI ui;
+public class Reticle extends UiObject{
+    private float r;
+    private float radius;
+    private float midDash;
+    
 
-     public Reticle(UI ui)
-     {
-         this.ui = ui;
-     
-     }
-
+    public Reticle(UI ui, float x, float y, float z, float third, float quart, float diameter, float rotation){
+        super(ui, x, y, z,third,quart,diameter,rotation);
+        radius = diameter/2;
+        r =0 ;
+        third = ui.height/3;
+        quart = ui.height/4;
+    }
 
      public void render()
      {

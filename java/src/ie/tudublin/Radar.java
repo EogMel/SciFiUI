@@ -3,32 +3,25 @@ package ie.tudublin;
 
 
 
-public class Radar
+public class Radar extends UiObject
 {
-    private float x;
-   // private float ex = 100;
-    private float y;
-    float r = 0;
-    private float diameter;
+    
+    private float r;
     private float radius;
-    private float rotation;
-    UI ui;
+    private float midDash;
+    
 
-    public Radar(UI ui,float x, float y, float diameter)
-    {
-        this.ui = ui;
-        this.x = x;
-        this.y = y;
-        this.diameter = diameter;
+    public Radar(UI ui, float x, float y, float z, float third, float quart, float diameter, float rotation){
+        super(ui, x, y, z,third,quart,diameter,rotation);
         radius = diameter/2;
+        r =0 ;
+        third = ui.height/3;
+        quart = ui.height/4;
     }
 
     public void render()
-    {
-        float third = ui.height/3;
-        float quart = ui.height/4;
-        
-        float midDash = ui.height-(quart/2);
+    {  
+        midDash = ui.height-(quart/2);
 
 
 

@@ -9,11 +9,11 @@ public abstract class UiObject
     protected float third;
     protected float quart;
     protected float diameter;
-    protected float radius;
+   
     protected float rotation;
     protected UI ui;
 
-    public UiObject(UI ui, float x, float y, float z, float third, float quart, float diameter, float radius, float rotation)
+    public UiObject(UI ui, float x, float y, float z, float third, float quart, float diameter, float rotation)
     {
         this.ui = ui;
         this.x = x;
@@ -22,7 +22,7 @@ public abstract class UiObject
         this.third = third;
         this.quart = quart;
         this.diameter = diameter;
-        this.radius = radius;
+        
         this.rotation = rotation;
       
 
@@ -126,16 +126,7 @@ public abstract class UiObject
     /**
      * @return the radius
      */
-    public float getRadius() {
-        return radius;
-    }
 
-    /**
-     * @param radius the radius to set
-     */
-    public void setRadius(float radius) {
-        this.radius = radius;
-    }
 
     /**
      * @return the rotation
