@@ -1,8 +1,8 @@
 # SciFi UI Project
 
-Name:
+Name: Eoghan Mellott
 
-Student Number: 
+Student Number: C17426754
 
 Fork this repository and use it a starter project for your assignment
 
@@ -59,16 +59,16 @@ Im also keeping track of the previous star positions in order to execute a cool 
 
 *Audio*:
 - Havent made an audio class i just implemented the audio cues in the class in which they relate to. 
-'''
+,,,
  Minim minim;
  AudioPlayer player;
  minim = new Minim(this);
 player = minim.loadFile("Rocket Thruster-SoundBible.com-1432176431.mp3");
-'''
+,,,
  this is all i needed to load the song from my data folder.
 
 To play it while you press a button i had to implement it as below so it would loop.
-'''
+,,,
         if(player.position() == player.length())
         {
             player.rewind();
@@ -77,12 +77,13 @@ To play it while you press a button i had to implement it as below so it would l
         else{
             player.play();
         }
-'''
+,,,
 
 
 
 # What I am most proud of in the assignment
-Probably the thing im most proud of has to be the Stars spawning and coming towards me because even with research it took me a while to get it working correctly to the point where it didnt look terrible. The Hyperjump effect also i think turned out great, plus the way the lights inside the cockpit flicker when you go into hyper jump adds to the whole effect
+Probably the thing im most proud of has to be the Stars spawning and coming towards me because even with research it took me a while to get it working correctly to the point where it didnt look off. The Hyperjump effect also i think turned out great, plus the way the lights inside the cockpit flicker when you go into hyper jump adds to the whole effect.
+Im also proud of the design, the drawing of the shapes and buttons using the vertices all look nice and clean. 
 
 
 
