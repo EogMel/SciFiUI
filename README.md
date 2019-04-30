@@ -12,16 +12,16 @@ For my assignment i chose to go with the inside of a cockpit of some futeristic 
 PS. Forgot to commit early in Project should be more.
 
 # Instructions
-w: up
-d: right
-a: left
-s: down 
+- w: up
+- d: right
+- a: left
+- s: down 
 
-f: accelerate
-r: accelerate X2
+- f: accelerate
+- r: accelerate X2
 
-' ': shoot laser beam
-h : hyperjump
+- ' ': shoot laser beam
+- h : hyperjump
 
 # How it works
 *Stars*:
@@ -31,34 +31,34 @@ h : hyperjump
 
 - Before drawing i get a sx and sy for each star. For this i divide x by z and map that value from 0 to 1 in the range of 0 to width/2 so as the frames go on the speed increases while z gets smaller so the effect of the star zooms by.
 
- - The size of the star is also increased in a similar way only 	slightly.
-	 Im also keeping track of the previous star positions in 	order t execute a cool lookking hyper speed effect done 	simply by drawing a line (ui.line(px,py,sx,sy)) from the 	current star position to 	the previous position. 
+ - The size of the star is also increased in a similar way only slightly.
+Im also keeping track of the previous star positions in order to execute a cool looking hyper speed effect done simply by drawing a line (ui.line(px,py,sx,sy)) from the current star position to the previous position. 
 
--to keep hold a value from the previous position we do the same 	as what we do for sx and sy  but using pz instead of z. 	Finally to keep the stars coming as they're limited to what 	i set (slows down the program if i go up to [1000]. there a 	simple if(z<1) that resets the values when the stars have 	left the viewport.
+- To keep hold a value from the previous position we do the same as what we do for sx and sy  but using pz instead of z. Finally to keep the stars coming as they're limited to what I set (slows down the program if i go up to [1000]. there a simple if(z<1) that resets the values when the stars have left the viewport.
 
 *Cockpit*: 
--Mostly done with just drawing lines
+- Mostly done with just drawing lines
 
--Realised pretty fast after doing some research the best way to do these none regular trapazoidal shaped was to use the beginShape() and endShape() using vertex(x,y) to have my custom shape.
+- Realised pretty fast after doing some research the best way to do these none regular trapazoidal shaped was to use the beginShape() and endShape() using vertex(x,y) to have my custom shape.
 
--For the buttons that light up during use i drew them on the dashboard in a colour and then drew them again with the same coords in a lighter colour but only to appear when a key was pressed to trigger it.
+- For the buttons that light up during use i drew them on the dashboard in a colour and then drew them again with the same coords in a lighter colour but only to appear when a key was pressed to trigger it.
 
-- the sine wave at the top of the screen was a late addition just to give it more jazz. i drew it with ellipses in an oval shape with the x's and y's barely off of eachother to make the shape appear as one. I also randomized the colour of each shape and thought it looked really cool when i ran it.
+- The sine wave at the top of the screen was a late addition just to give it more jazz. i drew it with ellipses in an oval shape with the x's and y's barely off of eachother to make the shape appear as one. I also randomized the colour of each shape and thought it looked really cool when i ran it.
 
 *Reticle*:
 - This was quite easy to implement basically just three circles with the same x and y with differing radius and lines going through it all controlled by mouseX and Y while the X and Y were inside the window area i didnt want the reticle shown at all times. 
 
--Laser beams also shot at where the middle of the reticle was form the turrets drawn earier. Basically just lines of varying thickness.
+- Laser beams also shot at where the middle of the reticle was form the turrets drawn earier. Basically just lines of varying thickness.
 
 *Radar*:
 
--Used ellipses and a line that i rotated using the pushmatrix translate the new (0,0) , rotate(rotation)    finished with push matrix. 
+- Used ellipses and a line that i rotated using the pushmatrix translate the new (0,0) , rotate(rotation)    finished with push matrix. 
 
--At the end once i had all my basics worked out i added the circular blue rotating sci fi looking gizmo that had rotating arc once again just to add some jazz.
+- At the end once i had all my basics worked out i added the circular blue rotating sci fi looking gizmo that had rotating arc once again just to add some jazz.
 
 
 *Audio*:
--Havent made an audio class i just implemented the audio cues in the class in which they relate to. 
+- Havent made an audio class i just implemented the audio cues in the class in which they relate to. 
 '''
  Minim minim;
  AudioPlayer player;
@@ -89,71 +89,4 @@ Probably the thing im most proud of has to be the Stars spawning and coming towa
 [![YouTube](http://img.youtube.com/vi/GTQSYgKNQ80/0.jpg)](https://youtu.be/GTQSYgKNQ80 )
 
 
-# Markdown Tutorial
-
-This is *emphasis*
-
-This is a bulleted list
-
-- Item
-- Item
-
-This is a numbered list
-
-1. Item
-1. Item
-
-This is a [hyperlink](http://bryanduggan.org)
-
-# Headings
-## Headings
-#### Headings
-##### Headings
-
-This is code:
-
-```Java
-public void render()
-{
-	ui.noFill();
-	ui.stroke(255);
-	ui.rect(x, y, width, height);
-	ui.textAlign(PApplet.CENTER, PApplet.CENTER);
-	ui.text(text, x + width * 0.5f, y + height * 0.5f);
-}
-```
-
-So is this without specifying the language:
-
-```
-public void render()
-{
-	ui.noFill();
-	ui.stroke(255);
-	ui.rect(x, y, width, height);
-	ui.textAlign(PApplet.CENTER, PApplet.CENTER);
-	ui.text(text, x + width * 0.5f, y + height * 0.5f);
-}
-```
-
-This is an image using a relative URL:
-
-![An image](images/p8.png)
-
-This is an image using an absolute URL:
-
-![A different image](https://bryanduggandotorg.files.wordpress.com/2019/02/infinite-forms-00045.png?w=595&h=&zoom=2)
-
-This is a youtube video:
-
-[![YouTube](http://img.youtube.com/vi/J2kHSSFA4NU/0.jpg)](https://www.youtube.com/watch?v=J2kHSSFA4NU)
-
-This is a table:
-
-| Heading 1 | Heading 2 |
-|-----------|-----------|
-|Some stuff | Some more stuff in this column |
-|Some stuff | Some more stuff in this column |
-|Some stuff | Some more stuff in this column |
-|Some stuff | Some more stuff in this column |
 
