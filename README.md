@@ -59,16 +59,16 @@ Im also keeping track of the previous star positions in order to execute a cool 
 
 *Audio*:
 - Havent made an audio class i just implemented the audio cues in the class in which they relate to. 
-,,,
+```
  Minim minim;
  AudioPlayer player;
  minim = new Minim(this);
 player = minim.loadFile("Rocket Thruster-SoundBible.com-1432176431.mp3");
-,,,
+```
  this is all i needed to load the song from my data folder.
 
 To play it while you press a button i had to implement it as below so it would loop.
-,,,
+```
         if(player.position() == player.length())
         {
             player.rewind();
@@ -77,7 +77,7 @@ To play it while you press a button i had to implement it as below so it would l
         else{
             player.play();
         }
-,,,
+```
 
 
 
